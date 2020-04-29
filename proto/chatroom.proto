@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package chatRoom;
+
+option go_package = ".;chatRoom";
+
+service ChatRoom {
+    rpc Send(SendRequest) returns (Response) {};
+    rpc Read(ReadRequest) returns (ReadResponse) {};
+    rpc Join(JoinRequest) returns (Response) {};
+    rpc Quit(QuitRequest) returns (Response) {};
+}
+
+message JoinRequest {
+    string name = 1;
+}
+
+message QuitRequest {
+    string name = 1;
+}
+
+message SendRequest {
+    string name = 1;
+    string msg = 2;
+}
+
+message ReadRequest {
+    string name = 1;
+}
+
+message Response {
+
+}
+
+message ReadResponse {
+    string msg = 1;
+}
