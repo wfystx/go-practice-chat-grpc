@@ -66,6 +66,7 @@ to quickly create a Cobra application.`,
 			return
 		}
 
+		fmt.Println("Welcome " + name)
 		go func() {
 			for {
 				readReq := &pb.ReadRequest{Name: name}
